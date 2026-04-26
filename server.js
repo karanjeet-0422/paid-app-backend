@@ -17,7 +17,7 @@ app.use(express.json());
 // =============================
 
 // ⚠️ CHANGE THIS FILE NAME
-const serviceAccount = require("./paid-app-v3-firebase-adminsdk-fbsvc-d596f5a32c.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_ADMIN_JSON);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
